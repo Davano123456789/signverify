@@ -35,7 +35,7 @@ const DOCUMENT_DATABASE = {
         issuerLocation: "Jakarta Selatan, Indonesia",
         recipient: "CV Mitra Abadi Jaya",
         signerName: "M. Fikrie Ramadhan",
-        signerTitle: "Head of Corporate Sales",
+        signerTitle: "Direktur Utama",
         status: "VALID",
         note: "Penawaran berlaku hingga 30 hari sejak tanggal diterbitkan.",
         stampText: "PT DIGITAL SINERGI NUSANTARA - OFFICIAL OFFER"
@@ -53,7 +53,7 @@ const DOCUMENT_DATABASE = {
         issuerLocation: "Jakarta Selatan, Indonesia",
         recipient: "Dinas Komunikasi dan Informatika",
         signerName: "M. Fikrie Ramadhan",
-        signerTitle: "VP Business Development",
+        signerTitle: "Direktur Utama",
         status: "VALID",
         note: "Proposal resmi yang telah disetujui oleh Direksi PT Digital Sinergi Nusantara.",
         stampText: "PT DIGITAL SINERGI NUSANTARA - APPROVED PROPOSAL"
@@ -71,7 +71,7 @@ const DOCUMENT_DATABASE = {
         issuerLocation: "Jakarta Selatan, Indonesia",
         recipient: "Seluruh Klien & Mitra Kerja",
         signerName: "M. Fikrie Ramadhan",
-        signerTitle: "Head of IT Operations & HR",
+        signerTitle: "Direktur Utama",
         status: "VALID",
         note: "Surat pemberitahuan resmi yang berlaku bagi seluruh mitra dan pihak terkait.",
         stampText: "PT DIGITAL SINERGI NUSANTARA - OFFICIAL NOTICE"
