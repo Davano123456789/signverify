@@ -1,0 +1,652 @@
+/* ==========================================================================
+   SignVerify - Premium CSS Design System
+   Aesthetics: Clean Corporate Navy, Emerald Verification Badges & Glassmorphism
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700&display=swap');
+
+:root {
+    --primary: #1e3a8a;
+    --primary-hover: #1e40af;
+    --primary-light: #eff6ff;
+    --accent-emerald: #059669;
+    --emerald-light: #ecfdf5;
+    --emerald-border: #a7f3d0;
+    --slate-900: #0f172a;
+    --slate-800: #1e293b;
+    --slate-700: #334155;
+    --slate-600: #475569;
+    --slate-500: #64748b;
+    --slate-300: #cbd5e1;
+    --slate-200: #e2e8f0;
+    --slate-100: #f1f5f9;
+    --slate-50: #f8fafc;
+    --white: #ffffff;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+    --shadow-xl: 0 20px 30px -10px rgba(15, 23, 42, 0.15);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-heading: 'Outfit', 'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: #f1f5f9;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(30, 58, 138, 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(5, 150, 105, 0.05) 0px, transparent 50%);
+    color: var(--slate-800);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header & Navbar */
+.app-header {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--slate-200);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 1rem 1.5rem;
+}
+
+.header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--slate-900);
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary) 0%, #3b82f6 100%);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
+}
+
+.brand-text {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--slate-900);
+    letter-spacing: -0.02em;
+}
+
+.brand-badge {
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    margin-left: 0.5rem;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--slate-600);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    color: var(--primary);
+    background: var(--primary-light);
+}
+
+.nav-btn.active {
+    color: var(--white);
+    background: var(--primary);
+}
+
+/* Main Layout */
+.main-wrapper {
+    flex: 1;
+    max-width: 900px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1.25rem;
+}
+
+/* Verification Card Container */
+.verify-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 4px 10px -4px rgba(15, 23, 42, 0.12);
+    border: 1px solid var(--slate-200);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Verified Header Ribbon Banner */
+.status-banner {
+    padding: 2.25rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.status-banner.valid {
+    background: linear-gradient(135deg, #065f46 0%, #059669 100%);
+    color: var(--white);
+}
+
+.status-banner.invalid {
+    background: linear-gradient(135deg, #991b1b 0%, #dc2626 100%);
+    color: var(--white);
+}
+
+.verified-icon-wrapper {
+    width: 72px;
+    height: 72px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.1);
+    animation: pulseGlow 2.5s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+    70% { box-shadow: 0 0 0 16px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+.verified-icon-wrapper svg {
+    width: 42px;
+    height: 42px;
+    stroke: var(--white);
+}
+
+.status-banner h1 {
+    font-family: var(--font-heading);
+    font-size: 1.65rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.01em;
+}
+
+.status-banner p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Verified Badge Pills */
+.seal-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 0.35rem 1rem;
+    border-radius: 30px;
+    font-size: 0.825rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    backdrop-filter: blur(4px);
+}
+
+/* Card Body Section */
+.card-body {
+    padding: 2rem;
+}
+
+.doc-type-tag {
+    display: inline-block;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: var(--radius-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 1.25rem;
+    border: 1px solid rgba(30, 58, 138, 0.15);
+}
+
+.doc-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--slate-900);
+    margin-bottom: 1.5rem;
+    line-height: 1.35;
+}
+
+/* Metadata Grid Table */
+.meta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    background: var(--slate-50);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--slate-200);
+    margin-bottom: 2rem;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-item.full-width {
+    grid-column: 1 / -1;
+}
+
+.meta-label {
+    font-size: 0.775rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    color: var(--slate-500);
+    margin-bottom: 0.25rem;
+}
+
+.meta-value {
+    font-size: 0.975rem;
+    font-weight: 600;
+    color: var(--slate-800);
+}
+
+.meta-value.highlight {
+    color: var(--primary);
+    font-weight: 700;
+    font-family: monospace;
+    font-size: 1.05rem;
+}
+
+/* Signature & Stamp Section */
+.signature-box {
+    margin-top: 2rem;
+    padding-top: 1.75rem;
+    border-top: 2px dashed var(--slate-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+
+.signer-info h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--slate-500);
+    margin-bottom: 0.5rem;
+}
+
+.signer-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--slate-900);
+}
+
+.signer-title {
+    font-size: 0.875rem;
+    color: var(--slate-600);
+}
+
+.signer-org {
+    font-size: 0.825rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-top: 0.2rem;
+}
+
+.stamp-container {
+    width: 260px;
+    height: 120px;
+    position: relative;
+}
+
+.signature-stamp-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+}
+
+/* Action Buttons */
+.card-actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(30, 58, 138, 0.3);
+}
+
+.btn-outline {
+    background: var(--white);
+    color: var(--slate-700);
+    border: 1px solid var(--slate-300);
+}
+
+.btn-outline:hover {
+    background: var(--slate-100);
+    color: var(--slate-900);
+}
+
+/* Admin QR Generator Page Styles */
+.generator-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--slate-200);
+    padding: 2rem;
+}
+
+.generator-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--slate-200);
+}
+
+.generator-header h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--slate-900);
+    margin-bottom: 0.25rem;
+}
+
+.generator-header p {
+    color: var(--slate-500);
+    font-size: 0.9rem;
+}
+
+.generator-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--slate-700);
+    margin-bottom: 0.4rem;
+}
+
+.form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    font-size: 0.925rem;
+    font-family: var(--font-main);
+    border: 1px solid var(--slate-300);
+    border-radius: var(--radius-sm);
+    background: var(--slate-50);
+    transition: all 0.2s ease;
+    color: var(--slate-900);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+}
+
+.logo-picker-options {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.logo-opt-btn {
+    flex: 1;
+    padding: 0.6rem;
+    border: 2px solid var(--slate-200);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--slate-700);
+    transition: all 0.2s ease;
+}
+
+.logo-opt-btn.active {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+/* QR Preview Box */
+.qr-preview-card {
+    background: var(--slate-50);
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-canvas-container {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    margin: 1rem 0;
+    border: 1px solid var(--slate-200);
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.qr-target-url {
+    font-size: 0.75rem;
+    color: var(--slate-500);
+    word-break: break-all;
+    background: var(--slate-100);
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1.25rem;
+    width: 100%;
+}
+
+/* Sample Docs List Panel */
+.sample-docs-panel {
+    margin-top: 2rem;
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--slate-200);
+}
+
+.sample-docs-panel h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--slate-900);
+    margin-bottom: 1rem;
+}
+
+.doc-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.doc-card-item {
+    background: var(--slate-50);
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--slate-800);
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.doc-card-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background: var(--primary-light);
+}
+
+.doc-card-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.doc-card-id {
+    font-family: monospace;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--slate-900);
+    margin: 0.25rem 0;
+}
+
+.doc-card-title {
+    font-size: 0.8rem;
+    color: var(--slate-600);
+    line-clamp: 2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Footer */
+.app-footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--slate-500);
+    font-size: 0.85rem;
+    margin-top: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .generator-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .meta-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .signature-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .status-banner {
+        padding: 1.75rem 1rem;
+    }
+
+    .status-banner h1 {
+        font-size: 1.35rem;
+    }
+
+    .card-body {
+        padding: 1.25rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .app-header, .card-actions, .app-footer, .nav-links {
+        display: none !important;
+    }
+    body {
+        background: white;
+    }
+    .main-wrapper {
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+    }
+    .verify-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
